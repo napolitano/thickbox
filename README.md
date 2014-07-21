@@ -32,7 +32,7 @@ If you prefer to use the original library please visit http://codylindley.com/th
 
 Otherwise you may want to use bower to install the library to your project:
 
-'bower install jquery-thickbox --save'
+    bower install jquery-thickbox --save
 
 ## Integration
 
@@ -227,6 +227,7 @@ The changelog was included for historical purposes. It seems that the project is
 ## Support
 
 ThickBox has received more attention than I had initially expected - so much so that I am a little overwhelmed with the notoriety and somewhat dumbfounded by all the individuals using it. Truthfully, I developed the solution as a proof of concept and personal endeavor to showcase the jQuery library. With that said, I think I might owe some people an apology. ThickBox is not retail software. It has no support or documentation (except for this site). Itâ€™s the start of a great script and should be used as a launching point. If you see its potential, then the script was likely created for you. If, however, you only see the limitations of the solution, then honestly, the script is likely not for you. With that said, I am sorry that I do not have the time to respond to every email/comment requesting support. However, if you send a detailed email of the issue, along with the browser(s) and operating system(s) the issue is occurring in, the chances of getting direct support will increase significantly. In addition to emailing me directory, and the choice for support I would recommend, you can visit and pillaged the ThickBox Forum for peer support.
+
 If past development is any indication, ThickBox will likely morph into another version in the future. If at that point it can stand alone as useful to you, then use it. However, as of today please do not expect a great deal of support for a script that was really never meant to be a complete software solution. Remember, this stuff is free. If it so happens to come wrapped with great documentation and support, then even better, but please don't assume that it should.
 
 ## Donate
