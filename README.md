@@ -66,7 +66,7 @@ This is the simplest example of ThickBox functionality. This example places a si
 * Provide a path in the href attribute to an image file (.jpg .jpeg .png .gif .bmp)
 
     <a href="image1.jpg" title="add a caption to title attribute / or leave blank" class="thickbox"><img src="ithumbnail1.jpg" alt="Single Image"/></a>
-    
+
 
 ### Gallery Images
 
@@ -158,6 +158,7 @@ The short of it is, yes! In fact, anything that can be viewed in a browser can a
 ## License
 
 http://www.opensource.org/licenses/mit-license.php
+
 http://www.gnu.org/licenses/gpl.html
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so.
