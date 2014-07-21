@@ -2,7 +2,7 @@
 
 ThickBox is a webpage UI dialog widget written in JavaScript on top of the jQuery library. Its function is to show a single image, multiple images, inline content, iframed content, or content served through AJAX in a hybrid modal.
 
-It was developed by Code Linley and last updated to version 3.1 on 08/08/2007
+It was developed by Cody Lindley and last updated to version 3.1 on 08/08/2007
 
 This repository contains the ThickBox library as bower module for projects relying on the library
 
@@ -65,7 +65,7 @@ This is the simplest example of ThickBox functionality. This example places a si
 * Give the link a class attribute with a value of thickbox (class="thickbox")
 * Provide a path in the href attribute to an image file (.jpg .jpeg .png .gif .bmp)
 
-    <a href="image1.jpg" title="add a caption to title attribute / or leave blank" class="thickbox"><img src="ithumbnail1.jpg" alt="Single Image"/></a>
+   '<a href="image1.jpg" title="add a caption to title attribute / or leave blank" class="thickbox"><img src="ithumbnail1.jpg" alt="Single Image"/></a>'
 
 ### Gallery Images
 
