@@ -1,0 +1,25 @@
+{
+  "name": "ThickBox",
+  "main": "thickbox.js",
+  "version": "3.1.0",
+  "homepage": "https://github.com/napolitano/thickbox",
+  "authors": [
+    "Cody Lindley"
+  ],
+  "description": "ThickBox is a webpage UI dialog widget written in JavaScript on top of the jQuery library.",
+  "keywords": [
+    "thickbox",
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+  "dependencies": {
+    "jquery": "~1.1.3"
+  }
+}
