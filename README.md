@@ -65,7 +65,7 @@ This is the simplest example of ThickBox functionality. This example places a si
 * Give the link a class attribute with a value of thickbox (class="thickbox")
 * Provide a path in the href attribute to an image file (.jpg .jpeg .png .gif .bmp)
 
-    <a href="image1.jpg" title="add a caption to title attribute / or leave blank" class="thickbox"><img src="ithumbnail1.jpg" alt="Single Image"/></a>
+    `<a href="image1.jpg" title="add a caption to title attribute / or leave blank" class="thickbox"><img src="ithumbnail1.jpg" alt="Single Image"/></a>`
 
 
 ### Gallery Images
