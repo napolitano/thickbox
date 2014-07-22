@@ -6,7 +6,7 @@ It was developed by Cody Lindley and last updated to version 3.1 on 08/08/2007
 
 This repository contains the ThickBox library as bower module for projects relying on the library
 
-## Deprectation Warning
+## Deprecation Warning
 
 It seems that the author of ThickBox doesn't have maintained the code for more than 7 years. It may and probably will have problems with recent versions of jQuery which drop legacy browser support.
 Anyway ThickBox is still used. So if you really need it within your project and you do not want to download and maintain the library by yourself, you might want to use this bower component.
