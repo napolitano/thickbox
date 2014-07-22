@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Thickbox by napolitano</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Thickbox</h1>
+        <h2>The famous thickbox library as a bower package</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/napolitano/thickbox/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/napolitano/thickbox/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/napolitano/thickbox" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="thickbox" class="anchor" href="#thickbox"><span class="octicon octicon-link"></span></a>ThickBox</h1>
+
+<p>ThickBox is a webpage UI dialog widget written in JavaScript on top of the jQuery library. Its function is to show a single image, multiple images, inline content, iframed content, or content served through AJAX in a hybrid modal.</p>
+
+<p>It was developed by Cody Lindley and last updated to version 3.1 on 08/08/2007</p>
+
+<p>This repository contains the ThickBox library as bower module for projects relying on the library</p>
+
+<h2>
+<a name="deprecation-warning" class="anchor" href="#deprecation-warning"><span class="octicon octicon-link"></span></a>Deprecation Warning</h2>
+
+<p>It seems that the author of ThickBox doesn't have maintained the code for more than 7 years. It may and probably will have problems with recent versions of jQuery which drop legacy browser support.
+Anyway ThickBox is still used. So if you really need it within your project and you do not want to download and maintain the library by yourself, you might want to use this bower component.</p>
+
+<h2>
+<a name="notice-about-readme" class="anchor" href="#notice-about-readme"><span class="octicon octicon-link"></span></a>Notice about README</h2>
+
+<p>The README file contains the texts from the author's project website. It's taken and converted to markdown to have a reference beside the files you will find in the repository</p>
+
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>ThickBox was built using the super lightweight jQuery library. Compressed, the jQuery library is 20k, uncompressed it's 58k.</li>
+<li>The ThickBox JavaScript code and CSS file only add an additional 15k (only 10k by using the thickbox-compressed.js) on top of the jQuery code. The CSS file could additionally be compressed if need be.</li>
+<li>ThickBox will resize images that are bigger than the browser window.</li>
+<li>ThickBox offers versatility (images, iframed content, inline content, and AJAX content).</li>
+<li>ThickBox will hide form elements in Windows IE 6.</li>
+<li>ThickBox will remain centered in the window even when the user scrolls the page or changes the size of the browser window. Clicking an image, the overlay, or close link will remove ThickBox.</li>
+<li>Due to the ThickBox creator's view that transitions should be tailored by individual authors, ThickBox windows do not implement fancy transitions. Feel free to add them as you see fit. Is this a feature? Well, some might say it is.</li>
+<li>ThickBox can be invoked from a link element, input element (typically a button), and the area element (image maps).</li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>If you prefer to use the original library please visit <a href="http://codylindley.com/thickbox/">http://codylindley.com/thickbox/</a></p>
+
+<p>Otherwise you may want to use bower to install the library to your project:</p>
+
+<pre><code>bower install jquery-thickbox --save
+</code></pre>
+
+<h2>
+<a name="integration" class="anchor" href="#integration"><span class="octicon octicon-link"></span></a>Integration</h2>
+
+<p>ThickBox depends on jQuery. So you need to include jQuery <em>before</em> ThickBox into your website. The following example shows how it may be done.</p>
+
+<pre><code>&lt;script type="text/javascript" src="path-to-file/jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="path-to-file/thickbox.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Paths may be different depending on your file structure. Because ThickBox is a bit aged yet, you should not expect that it will work with latest-greatest jQuery versions - but for now it works fine with jQuery 2.1.1.</p>
+
+<p>You also must include the ThickBox CSS file into your website:</p>
+
+<pre><code>&lt;link rel="stylesheet" href="path-to-file/thickbox.css" type="text/css" media="screen" /&gt;
+</code></pre>
+
+<p>Please be aware that ThickBox uses a special PNG image (mayFFBgHack.png) which is referenced by the CSS file. ThickBox also uses a loading animation which basically is a animated GIF image with the name loadingAnimation.gif.</p>
+
+<p>Depending on your file structure it might be necessary to update the path to this files.</p>
+
+<h2>
+<a name="supported-and-tested-browsers" class="anchor" href="#supported-and-tested-browsers"><span class="octicon octicon-link"></span></a>Supported and tested browsers</h2>
+
+<p>Windows IE 6.0, Windows IE 7+, Windows FF 2.0.0.6+, Windows Opera 9.0+, Macintosh Safari 2.0.4+, Macintosh FF 2.0.0.6+, Macintosh Opera 9.10+</p>
+
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<h3>
+<a name="single-image" class="anchor" href="#single-image"><span class="octicon octicon-link"></span></a>Single Image</h3>
+
+<p>This is the simplest example of ThickBox functionality. This example places a single image in a ThickBox.</p>
+
+<ul>
+<li>Create a link element (<a href>)</a>
+</li>
+<li>Give the link a class attribute with a value of thickbox (class="thickbox")</li>
+<li>
+<p>Provide a path in the href attribute to an image file (.jpg .jpeg .png .gif .bmp)</p>
+
+<p><code>&lt;a href="image1.jpg" title="add a caption to title attribute / or leave blank" class="thickbox"&gt;&lt;img src="ithumbnail1.jpg" alt="Single Image"/&gt;&lt;/a&gt;</code></p>
+</li>
+</ul><h3>
+<a name="gallery-images" class="anchor" href="#gallery-images"><span class="octicon octicon-link"></span></a>Gallery Images</h3>
+
+<p>This example is exactly like the single image functionality except that it allows use of the rel attribute to group images together so they can be navigated in a ThickBox. The ideal usage would be for images galleries.</p>
+
+<ul>
+<li>Create some link elements (<a href>)</a>
+</li>
+<li>Give the link a class attribute with a value of "thickbox" (class="thickbox")</li>
+<li>Provide a path in the href attribute to an image file (.jpg .jpeg .png .gif .bmp)</li>
+<li>Give each link element the same rel element and value. (Example: rel="gallery-plants")</li>
+</ul><p>While you have a ThickBox gallery image open, you can navigate forward and backward through the images by using the left &lt; key (previous) and right &gt; key (next) on the keyboard (Next and Previous links are also provided in the ThickBox). The images will appear in the gallery from first to last as they appear in the HTML document flow.</p>
+
+<pre><code>&lt;a href="image1.jpg" title="add a caption to title attribute / or leave blank" class="thickbox" rel="gallery-plants"&gt;&lt;img src="thumbnail1.jpg" alt="Plant 1" /&gt;&lt;/a&gt;
+&lt;a href="image2.jpg" title="add a caption to title attribute / or leave blank" class="thickbox" rel="gallery-plants"&gt;&lt;img src="thumbnail2.jpg" alt="Plant 1" /&gt;&lt;/a&gt;
+&lt;a href="image3.jpg" title="add a caption to title attribute / or leave blank" class="thickbox" rel="gallery-plants"&gt;&lt;img src="thumbnail3.jpg" alt="Plant 1" /&gt;&lt;/a&gt;
+&lt;a href="image4.jpg" title="add a caption to title attribute / or leave blank" class="thickbox" rel="gallery-plants"&gt;&lt;img src="thumbnail4.jpg" alt="Plant 1" /&gt;&lt;/a&gt;
+</code></pre>
+
+<h3>
+<a name="inline-content" class="anchor" href="#inline-content"><span class="octicon octicon-link"></span></a>Inline Content</h3>
+
+<p>Inline content on the page, either hidden or showing, can be placed in a ThickBox.</p>
+
+<ul>
+<li>Create a link element (<a href>)</a>
+</li>
+<li>Give the link a class attribute with a value of thickbox (class="thickbox")</li>
+<li>In the href attribute of the link add the following anchor: #TB_inline</li>
+<li>In the href attribute after the #TB_inline add the following query string on to the anchor: '?height=300&amp;width=300&amp;inlineId=myOnPageContent'</li>
+<li>Change the values of height, width, and inlineId in the query accordingly (inlineID is the ID value of the element that contains the content you would like to show in a ThickBox.</li>
+<li>Optionally you may add modal=true to the query string (e.g. #TB_inline?height=155&amp;width=300&amp;inlineId=hiddenModalContent&amp;modal=true) so that closing a ThickBox will require calling the tb_remove() function from within the ThickBox. See the hidden modal content example, where you must click yes or no to close the ThickBox.</li>
+</ul><p>If the inline content in the ThickBox contains more content than the ThickBox dimensions will show, a vertical scroll bar will appear so that the content can be scrolled. You can avoid having the scroll by making sure the ThickBox has the appropriate dimensions in order to show all of the inline content without having to scroll. In other words, if you don't want scroll bars, increase the height and width of the ThickBox until the content does not require scrolling.</p>
+
+<pre><code>&lt;input alt="#TB_inline?height=300&amp;width=400&amp;inlineId=myOnPageContent" title="add a caption to title attribute / or leave blank" class="thickbox" type="button" value="Show" /&gt;
+&lt;a href="#TB_inline?height=155&amp;width=300&amp;inlineId=hiddenModalContent&amp;modal=true" class="thickbox"&gt;Show hidden modal content.&lt;/a&gt;
+</code></pre>
+
+<h3>
+<a name="iframed-content" class="anchor" href="#iframed-content"><span class="octicon octicon-link"></span></a>iFramed Content</h3>
+
+<p>Opens URL's in an iframe inside of ThickBox. Yes, this is Greybox functionality.</p>
+
+<ul>
+<li>Create a link element (<a href>)</a>
+</li>
+<li>Give the link a class attribute with a value of thickbox (class="thickbox")</li>
+<li>In the href attribute of the link provide the URL you would like to display in a ThickBox</li>
+<li>In the href attribute, after the URL, add the following query on to the end of the URL &amp; any parameters you might add: '?KeepThis=true&amp;TB_iframe=true&amp;height=400&amp;width=600'</li>
+<li>Change the values of height and width in the query accordingly</li>
+<li>Optionally you may add modal=true to the query string (e.g. ?KeepThis=true&amp;TB_iframe=true&amp;height=400&amp;width=600&amp;modal=true) so that closing a ThickBox will require calling the tb_remove() function from within the ThickBox iframe (self.parent.tb_remove()). See the iframe demo for an example, where you must click "ok" to close the ThickBox.</li>
+</ul><p>Add all other query parameters before the TB_iframe parameters. Everything after the "TB" is removed from the URL.</p>
+
+<pre><code>&lt;a href="ajax.PHP?keepThis=true&amp;TB_iframe=true&amp;height=250&amp;width=400" title="add a caption to title attribute / or leave blank" class="thickbox"&gt;Example 1&lt;/a&gt;
+&lt;a href="ajaxOverFlow.htm?keepThis=true&amp;TB_iframe=true&amp;height=300&amp;width=500" title="add a caption to title attribute / or leave blank" class="thickbox"&gt;Example 2&lt;/a&gt;
+&lt;a href="iframeModal.html?placeValuesBeforeTB_=savedValues&amp;TB_iframe=true&amp;height=200&amp;width=300&amp;modal=true" title="add a caption to title attribute / or leave blank" class="thickbox"&gt;Open iFrame Modal&lt;/a&gt;
+</code></pre>
+
+<h3>
+<a name="ajax-content" class="anchor" href="#ajax-content"><span class="octicon octicon-link"></span></a>AJAX Content</h3>
+
+<p>Use a hidden HTTP request (AJAX) to fetch files from the same server and have ThickBox display the contents of the files.</p>
+
+<ul>
+<li>Create a link element (<a href>)</a>
+</li>
+<li>Give the link a class attribute with a value of thickbox (class="thickbox")</li>
+<li>Provide a path in the href to the file/directory on the server. (href="ajaxLogin.htm")</li>
+<li>In the href attribute, after the URL path to the file, add the following query on to the end of the URL: '?height=300&amp;width=300'</li>
+<li>Change the values of height and width in the query accordingly</li>
+<li>Optionally you may add modal=true to the query string (e.g. ?height=300&amp;width=300&amp;modal=true) so that closing a ThickBox will require calling the tb_remove() function from within the ThickBox. See the login example, where you must click cancel to close the ThickBox.</li>
+</ul><p>In order to open new Ajax content in an open Ajax ThickBox, its code must also contain the appropriate HTML (class=""thickbox) to launch an Ajax ThickBox (see demo for example). The only catch is, the ThickBox calls must include both the width and height of the original ThickBox. If you leave it blank the window will resize to the default size(630x440).</p>
+
+<pre><code>&lt;a href="ajaxOverFlow.html?height=300&amp;width=300" title="add a caption to title attribute / or leave blank" class="thickbox"&gt;Scrolling content&lt;/a&gt;
+&lt;a href="ajax.PHP?height=220&amp;width=400" class="thickbox" title="add a caption to title attribute / or leave blank"&gt;No-scroll content&lt;/a&gt;
+&lt;a href="ajaxLogin.html?height=85&amp;width=250&amp;modal=true" class="thickbox" title="Please Sign In"&gt;login (modal)&lt;/a&gt;
+&lt;a href="ajaxTBcontent.html?height=200&amp;width=300" class="thickbox" title=""&gt;Update ThickBox content&lt;/a&gt;
+</code></pre>
+
+<h2>
+<a name="q--a" class="anchor" href="#q--a"><span class="octicon octicon-link"></span></a>Q &amp; A</h2>
+
+<h3>
+<a name="i-am-using-an-older-version-of-thickbox-how-do-i-upgrade" class="anchor" href="#i-am-using-an-older-version-of-thickbox-how-do-i-upgrade"><span class="octicon octicon-link"></span></a>I am using an older version of ThickBox. How do I upgrade?</h3>
+
+<p>I suggest stripping out the old CSS and JS and adding back in the new code created for the current version of ThickBox. If that is bad news, then hold tight - I have some good news, too. The way by which ThickBox is invoked has not changed. So, there is no need to change the HTML that invokes a ThickBox.</p>
+
+<h3>
+<a name="can-i-display-flash-in-a-thickbox" class="anchor" href="#can-i-display-flash-in-a-thickbox"><span class="octicon octicon-link"></span></a>Can I display Flash in a ThickBox?</h3>
+
+<p>In short, yes! However, I have not personally tested this yet. I have no idea of the browser quirks and support surrounding the usage of Flash in a ThickBox.</p>
+
+<h3>
+<a name="can-a-thickbox-appear-over-the-top-of-my-flash-content" class="anchor" href="#can-a-thickbox-appear-over-the-top-of-my-flash-content"><span class="octicon octicon-link"></span></a>Can a ThickBox appear over the top of my Flash content?</h3>
+
+<p>Yes! Have a look here for a full explanation.</p>
+
+<h3>
+<a name="if-we-use-this-code-for-a-client-can-we-donate-money-to-thank-you-for-your-efforts" class="anchor" href="#if-we-use-this-code-for-a-client-can-we-donate-money-to-thank-you-for-your-efforts"><span class="octicon octicon-link"></span></a>If we use this code for a client, can we donate money to thank you for your efforts?</h3>
+
+<p>Yes, simply click on the "Donate" button in the next section to make a PayPal donation.</p>
+
+<h3>
+<a name="can-a-thickbox-be-opened-from-another-thickbox" class="anchor" href="#can-a-thickbox-be-opened-from-another-thickbox"><span class="octicon octicon-link"></span></a>Can a ThickBox be opened from another ThickBox?</h3>
+
+<p>Sort of, using an Ajax ThickBox you can update the content of the ThickBox. See the Ajax Demo Example.</p>
+
+<h3>
+<a name="can-you-view-a-pdf-in-a-thickbox" class="anchor" href="#can-you-view-a-pdf-in-a-thickbox"><span class="octicon octicon-link"></span></a>Can you view a PDF in a ThickBox?</h3>
+
+<p>The short of it is, yes! In fact, anything that can be viewed in a browser can also be viewed in a ThickBox using an iframe. Check out the iframe content example.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p><a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></p>
+
+<p><a href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</a></p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so.</p>
+
+<h2>
+<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>Changelog</h2>
+
+<p>The changelog was included for historical purposes. It seems that the project is not longer maintained by the original author.</p>
+
+<h3>
+<a name="as-of-08012007" class="anchor" href="#as-of-08012007"><span class="octicon octicon-link"></span></a>As of 08/01/2007</h3>
+
+<ul>
+<li>Added modal functionality to ThickBox iframes</li>
+<li>Fixed Flash transparency issue with Firefox on OSX</li>
+<li>Updated to jQuery 1.1.3.1</li>
+<li>Changed how inline content is handled in Thickbox. Instead of duplicating the inline content thickbox will now move it accordingly inside of the DOM</li>
+<li>Safari iframe source issue solved</li>
+</ul><h3>
+<a name="as-of-05022007" class="anchor" href="#as-of-05022007"><span class="octicon octicon-link"></span></a>As of 05/02/2007</h3>
+
+<ul>
+<li>If sizes are not set for width and/or height (inline, iframe, and ajax content), ThickBox will default to a width of 630px and a height of 440px</li>
+<li>iframe hack to hide &amp;select" elements now only runs in IE 6</li>
+<li>Scrollbars are removed in IE 6 when a ThickBox is opened (to counter IE 6's errant width and height calculations)</li>
+<li>Cleaned code using JSLint</li>
+<li>A new compressed thickbox.js using Packer</li>
+<li>Updated ThickBox to use jQuery 1.1.2</li>
+<li>Major updates to JavaScript and CSS to address scrolling and overlay issues</li>
+<li>Replaced pre-loader image, and Pre-loader image is now being pre-loaded</li>
+<li>ThickBox now works with image maps ("area" elements) and form buttons ("input" elements), just like links ("a" elements)</li>
+<li>If you use Ajax content, ThickBox will now open new content in the current ThickBox. That is, after the content is loaded into a ThickBox (via Ajax), it will be parsed for any area, link, or input elements with a class of "thickbox". This will allow you to load new content into the current ThickBox</li>
+<li>Added the ability to create a real modal window when using inline or Ajax content</li>
+</ul><h3>
+<a name="as-of-1242007" class="anchor" href="#as-of-1242007"><span class="octicon octicon-link"></span></a>As of 1/24/2007</h3>
+
+<ul>
+<li>Updated ThickBox to work with jQuery release 1.1.1</li>
+</ul><h3>
+<a name="as-of-10112006" class="anchor" href="#as-of-10112006"><span class="octicon octicon-link"></span></a>As of 10/11/2006</h3>
+
+<ul>
+<li>Updated jQuery code to release 1.0.2</li>
+</ul><h3>
+<a name="as-of-10092006" class="anchor" href="#as-of-10092006"><span class="octicon octicon-link"></span></a>As of 10/09/2006</h3>
+
+<ul>
+<li>Fixed scrolling issues with FireFox</li>
+</ul><h3>
+<a name="as-of-09232006" class="anchor" href="#as-of-09232006"><span class="octicon octicon-link"></span></a>As of 09/23/2006</h3>
+
+<ul>
+<li>Updated jQuery code to release 1.0.1</li>
+<li>The escape key will now close ThickBox</li>
+<li>Removed the necessity to have an extension to use the iframe content and ajax content (image content still requires an extension)</li>
+<li>When opening iframe content with ThickBox the window will only appear after the window has loaded its content (This will not work in Safari)</li>
+<li>Moved the next and previous keyboard functionality for the gallery images to the left &lt; key (previous) and right &gt; key (next). By doing this it fixes a known issue with safari and the arrow keys. This also allows sites design to be scrolled horizontally to use the arrow keys accordingly.</li>
+<li>ThickBox will now work with sites that scroll horizontally. So, a ThickBox, not matter if you scroll a website horizontally or vertically will always show up centered in the window.</li>
+</ul><h3>
+<a name="as-of-08072006" class="anchor" href="#as-of-08072006"><span class="octicon octicon-link"></span></a>As of 08/07/2006</h3>
+
+<ul>
+<li>Fixed height issue of transparent iframe to hide select elements in IE</li>
+</ul><h3>
+<a name="as-of-08032006" class="anchor" href="#as-of-08032006"><span class="octicon octicon-link"></span></a>As of 08/03/2006</h3>
+
+<ul>
+<li>Added greybox functionality (iframed content)</li>
+<li>Added titles to ThickBox for iframed, inline, and ajax content</li>
+<li>Added image gallery functions (with keyboard navigation by using the left and right arrow keys)</li>
+<li>New (separate) CSS file specifically for ThickBox</li>
+<li>Fixed Firefox caching issue when loading a ThickBox image for the first time</li>
+<li>Cleaned up and optimized the thickbox.js file</li>
+<li>Add the new file extension .bmp for ThickBox images</li>
+<li>Removed set height on ThickBox so two lines of caption will stretch the window vertically</li>
+</ul><h3>
+<a name="as-of-07062006" class="anchor" href="#as-of-07062006"><span class="octicon octicon-link"></span></a>As of 07/06/2006</h3>
+
+<ul>
+<li>Added the ability to use inline div elements to populate a ThickBox</li>
+<li>Added the ability to use uppercase and lowercase extensions</li>
+<li>Loading animation centers on the screen regardless of vertical scroll</li>
+<li>In IE, select boxes are now hidden when ThickBox is open</li>
+<li>Fixed a bug that occurs when no title is used on anchor elements</li>
+<li>Fixed overlay so that it covers the screen during the loading animation (occurred in FF and Opera)</li>
+<li>Uses the new jQuery 1.0 â€“ Alpha Release</li>
+</ul><h2>
+<a name="support" class="anchor" href="#support"><span class="octicon octicon-link"></span></a>Support</h2>
+
+<p>ThickBox has received more attention than I had initially expected - so much so that I am a little overwhelmed with the notoriety and somewhat dumbfounded by all the individuals using it. Truthfully, I developed the solution as a proof of concept and personal endeavor to showcase the jQuery library. With that said, I think I might owe some people an apology. ThickBox is not retail software. It has no support or documentation (except for this site). Itâ€<g-emoji alias="tm" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2122.png">™</g-emoji>s the start of a great script and should be used as a launching point. If you see its potential, then the script was likely created for you. If, however, you only see the limitations of the solution, then honestly, the script is likely not for you. With that said, I am sorry that I do not have the time to respond to every email/comment requesting support. However, if you send a detailed email of the issue, along with the browser(s) and operating system(s) the issue is occurring in, the chances of getting direct support will increase significantly. In addition to emailing me directory, and the choice for support I would recommend, you can visit and pillaged the ThickBox Forum for peer support.</p>
+
+<p>If past development is any indication, ThickBox will likely morph into another version in the future. If at that point it can stand alone as useful to you, then use it. However, as of today please do not expect a great deal of support for a script that was really never meant to be a complete software solution. Remember, this stuff is free. If it so happens to come wrapped with great documentation and support, then even better, but please don't assume that it should.</p>
+
+<h2>
+<a name="donate" class="anchor" href="#donate"><span class="octicon octicon-link"></span></a>Donate</h2>
+
+<p>Knowledge is its own reward. While its true that my own personal enjoyment and education continues to thrive as I develop ThickBox, a little bit of cash for a rainy day never hurt anyone. So, if you're feeling gracious and would like to improve my monetary situation out of gratitude, or maybe because my work on ThickBox has helped you monetarily, you can give me a little cash for all my hard work by clicking on the "PayPal Donate" button below and send me some cha-ching. Of course, this is not necessary, even if you plan on using ThickBox commercially. As I said, knowledge is its own reward.</p>
+
+<p>Please refer to <a href="http://codylindley.com/thickbox/">http://codylindley.com/thickbox/</a> for the proper PayPal donation link.</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
